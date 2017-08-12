@@ -84,5 +84,10 @@ $colors: (
 // Fonts
 // --------------------------------------------------
 
+$font-family-md-base: "Calibri";
+$font-family-ios-base: "Calibri";
+$font-family-wp-base: "Calibri";
 @import "roboto";
 @import "noto-sans";
+$menu-width: 275px;
+$toolbar-background: #00a3e0;
