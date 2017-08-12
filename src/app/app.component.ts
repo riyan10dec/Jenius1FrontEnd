@@ -8,6 +8,8 @@ import { ListPage } from '../pages/list/list';
 import { CustomerPaymentPage } from '../pages/customer-payment/customer-payment';
 import { PaymentDetailPage} from '../pages/payment-detail/payment-detail';
 
+import { NotificationService } from '../providers/notification-service/notification-service';
+
 import { FCM } from '@ionic-native/fcm';
 
 @Component({
@@ -20,9 +22,8 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public fcm: FCM) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public fcm: FCM, private notificationService: NotificationService) {
     this.initializeApp();
-    this.configureNotification(fcm);
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -43,6 +44,8 @@ export class MyApp {
       this.fcm.getToken().then(token=>{
         // TODO : Call service to register token
         // backend.registerToken(token);
+        console.log('token from fcm : ' + token)
+        this.registerToken({ CashTag: '$buyer', Token: token })
       })
       
       this.fcm.onNotification().subscribe(data=>{
@@ -56,12 +59,14 @@ export class MyApp {
       this.fcm.onTokenRefresh().subscribe(token=>{
         // TODO : Call service to register token
         // backend.registerToken(token);
+        console.log('token from fcm : ' + token)
+        this.registerToken({ CashTag: '$buyer', Token: token })
       })
     });
   }
 
-  configureNotification(fcm) {
-    
+  registerToken(token: any) {
+    this.notificationService.registerToken(token);
   }
 
   openPage(page) {

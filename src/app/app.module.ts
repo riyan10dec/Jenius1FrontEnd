@@ -2,6 +2,7 @@ import { NavParams } from 'ionic-angular/es2015';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -19,6 +20,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 import { FCM } from '@ionic-native/fcm';
+import { NotificationService } from '../providers/notification-service/notification-service';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { FCM } from '@ionic-native/fcm';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp, {tabsPlacement : 'top', tabsHideOnSubPages:"true"}),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -53,7 +56,8 @@ import { FCM } from '@ionic-native/fcm';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     NavParams,
-    BarcodeScanner
+    BarcodeScanner,
+    NotificationService
   ]
 })
 export class AppModule {}

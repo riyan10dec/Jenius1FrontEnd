@@ -61,7 +61,7 @@
             "cordova-plugin-statusbar": {},
             "cordova-plugin-whitelist": {},
             "ionic-plugin-keyboard": {},
-            "cordova-plugin-fcm": {}
+            "cordova-plugin-fcm": {},
             "cordova-plugin-camera": {},
             "phonegap-plugin-barcodescanner": {}
         },
