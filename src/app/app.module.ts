@@ -10,6 +10,7 @@ import { CustomerPaymentPage } from '../pages/customer-payment/customer-payment'
 import { PaymentDetailPage } from '../pages/payment-detail/payment-detail';
 import { PaymentSummaryPage } from '../pages/payment-summary/payment-summary';
 import { PaymentTabsPage } from '../pages/payment-tabs/payment-tabs';
+import { HistoryDetailPage } from '../pages/history-detail/history-detail';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -23,7 +24,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CustomerPaymentPage,
     PaymentDetailPage,
     PaymentSummaryPage,
-    PaymentTabsPage
+    PaymentTabsPage,
+    HistoryDetailPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CustomerPaymentPage,
     PaymentDetailPage,
     PaymentSummaryPage,
-    PaymentTabsPage
+    PaymentTabsPage,
+    HistoryDetailPage
   ],
   providers: [
     StatusBar,

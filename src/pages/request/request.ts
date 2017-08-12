@@ -15,8 +15,9 @@ import { PaymentSummaryPage } from '../payment-summary/payment-summary';
   templateUrl: 'request.html',
 })
 export class RequestPage {
-
+  public cashtag:string;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.cashtag = "$";
   }
 
   ionViewDidLoad() {
@@ -25,5 +26,10 @@ export class RequestPage {
 
   goToSummary(){
     this.navCtrl.push(PaymentSummaryPage);
+  }
+  OnCashtagChange(){
+    if(this.cashtag.length == 0){
+      this.cashtag = "$";
+    }
   }
 }

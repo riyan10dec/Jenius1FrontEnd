@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {HistoryDetailPage} from '../history-detail/history-detail';
 
 /**
  * Generated class for the HistoryPage page.
@@ -20,6 +21,9 @@ export class HistoryPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HistoryPage');
+  }
+  goToHistoryDetail(){
+    this.navCtrl.push(HistoryDetailPage);
   }
 
 }
