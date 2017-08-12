@@ -9,7 +9,7 @@
 
 
 <ion-content>
-  <ion-card (click)="goToHistoryDetail()">
+  <ion-card *ngFor="let g of listHistory" (click)="goToHistoryDetail(g)">
     <ion-card-content>
       <ion-grid>
         <ion-row>
@@ -18,16 +18,16 @@
           </ion-col>
           <ion-col col-6>
             <ion-row>
-               Antonio Ferbatang
+               {{g.custname}}
             </ion-row>
             <ion-row class="date">
-              09 August 2017
+              {{g.trxdate | date:'dd MMM yyyy'}}
             </ion-row>
           </ion-col>
           <ion-col col-4>
             <ion-row >
               <ion-col col-12 text-right right class="amount">
-              1.000
+              {{g.trxamount}}
               </ion-col>
             </ion-row>
             <ion-row >

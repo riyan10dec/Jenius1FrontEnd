@@ -10,7 +10,8 @@ export class HomeService {
     private getHistoryPaymentRequestQuery: string = 'api/paymentrequest/$buyer';
     private getHistoryPaymentConfirmationQuery: string = 'api/paymentrequest/$buyer';
     private getNameQuery: string = 'api/customer/@0';
-    private paymentRequestQuery: string = 'api/paymentrequests/@0';
+    private paymentRequestQuery: string = 'api/paymentrequest';
+    private paymentRequestHistoryQuery: string = 'api/paymentrequest/history/@0';
 
     getHistoryPaymentRequest(merchantid: string): Observable<any> {
         return this.apiService.get(this.getHistoryPaymentRequestQuery.replace('@0', merchantid))
@@ -24,10 +25,11 @@ export class HomeService {
         return this.apiService.get(this.getNameQuery.replace('@0', cashtag))
             .map((data) => data);
     }
+    getHistory(cashtag: string): Observable<any> {
+        return this.apiService.get(this.paymentRequestHistoryQuery.replace('@0', cashtag))
+            .map((data) => data);
+    }
     paymentRequest(payload): Observable<any> {
-        return this.apiService.post(this.paymentRequestQuery, 
-            {
-                data : payload,
-            }).map(data => data.result);
+        return this.apiService.post(this.paymentRequestQuery,payload).map(data => data.result);
     }
 }
