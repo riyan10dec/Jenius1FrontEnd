@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {HistoryDetailPage} from '../history-detail/history-detail';
+
 /**
- * Generated class for the HistoryPage page.
+ * Generated class for the ConfirmationHistoryDetailPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
@@ -10,19 +10,16 @@ import {HistoryDetailPage} from '../history-detail/history-detail';
 
 @IonicPage()
 @Component({
-  selector: 'page-history',
-  templateUrl: 'history.html',
+  selector: 'page-confirmation-history-detail',
+  templateUrl: 'confirmation-history-detail.html',
 })
-export class HistoryPage {
+export class ConfirmationHistoryDetailPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HistoryPage');
+    console.log('ionViewDidLoad ConfirmationHistoryDetailPage');
   }
 
-  goToHistoryDetail(){
-    this.navCtrl.push(HistoryDetailPage);
-  }
 }

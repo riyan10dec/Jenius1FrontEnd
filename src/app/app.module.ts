@@ -13,6 +13,10 @@ import { PaymentSummaryPage } from '../pages/payment-summary/payment-summary';
 import { PaymentTabsPage } from '../pages/payment-tabs/payment-tabs';
 import { HistoryDetailPage } from '../pages/history-detail/history-detail';
 import { ScanQrPage } from '../pages/scan-qr/scan-qr';
+import { ConfirmationPage } from '../pages/confirmation/confirmation';
+import { ConfirmationHistoryPage } from '../pages/confirmation-history/confirmation-history';
+import { ConfirmationTabsPage } from '../pages/confirmation-tabs/confirmation-tabs';
+import { ConfirmationHistoryDetailPage } from '../pages/confirmation-history-detail/confirmation-history-detail';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -32,7 +36,9 @@ import { NotificationService } from '../providers/notification-service/notificat
     PaymentSummaryPage,
     PaymentTabsPage,
     HistoryDetailPage,
-    ScanQrPage
+    ScanQrPage,
+    ConfirmationTabsPage,
+    ConfirmationHistoryDetailPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +55,9 @@ import { NotificationService } from '../providers/notification-service/notificat
     PaymentSummaryPage,
     PaymentTabsPage,
     HistoryDetailPage,
-    ScanQrPage
+    ScanQrPage,
+    ConfirmationTabsPage,
+    ConfirmationHistoryDetailPage
   ],
   providers: [
     StatusBar,

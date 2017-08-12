@@ -24,6 +24,7 @@ export class PaymentSummaryPage {
   }
   submitRequest(){
     this.app.getRootNav().setRoot(HomePage, {
+      isMerchant: true,
       amount : '1.000 IDR',
       sendTo : 'Antonio Ferbatang'
     });

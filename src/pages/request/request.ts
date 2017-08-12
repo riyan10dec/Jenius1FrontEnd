@@ -16,8 +16,9 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   templateUrl: 'request.html',
 })
 export class RequestPage {
-  public cashtag:string;
-  constructor(public navCtrl: NavController, public navParams: NavParams,private barcodeScanner: BarcodeScanner) {
+  public cashtag: string;
+   public amount: number;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private barcodeScanner: BarcodeScanner) {
     this.cashtag = "$";
   }
 
@@ -25,19 +26,31 @@ export class RequestPage {
     console.log('ionViewDidLoad RequestPage');
   }
 
-  goToSummary(){
+  goToSummary() {
     this.navCtrl.push(PaymentSummaryPage);
   }
-  OnCashtagChange(){
-    if(this.cashtag.length == 0){
-      this.cashtag = "$";
-    }
+  OnCashtagChange() {
+    //this.cashtag.replace("$", "");
+    //    if (this.cashtag.includes("$",0)){
+    // this.cashtag.replace("$","");
+    //   this.cashtag = "$"+this.cashtag;} else
+    if (this.cashtag.length == 0) { this.cashtag = "$"; }
+    else if (!this.cashtag.includes("$", 0)) { this.cashtag = "$" + this.cashtag; }
   }
+
+  OnAmountChange(){
+    if (this.amount < 0) { this.amount = 0}
+    else if(this.amount.toString().includes(" ",0)){this.amount = this.amount;}
+    else if(this.amount.toString().includes("-",0)){this.amount = this.amount;}
+    else if(!this.amount.toString().includes(",",0)){this.amount = this.amount;}
+    else if(!this.amount.toString().includes(".",0)){this.amount = this.amount;}
+  }
+
   scan() {
     console.log("a");
     this.barcodeScanner.scan()
       .then((result) => {
-         this.cashtag =  result.text;
+        this.cashtag = result.text;
       })
       .catch((error) => {
         alert(error);

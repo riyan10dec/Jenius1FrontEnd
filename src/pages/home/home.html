@@ -15,7 +15,7 @@
   </p>
 
   <button ion-button secondary menuToggle>Toggle Menu</button>-->
-  <ion-card *ngIf="showModal" (click)="closeModal()">
+  <ion-card *ngIf="showModal && isMerchant" (click)="closeModal()">
     <ion-card-content>
       <ion-grid text-right right>
         <ion-icon name="close"></ion-icon>
@@ -42,6 +42,34 @@
       </ion-grid>
     </ion-card-content>
   </ion-card>
+  <ion-card *ngIf="showModal && !isMerchant" (click)="closeModal()">
+    <ion-card-content>
+      <ion-grid text-right right>
+        <ion-icon name="close"></ion-icon>
+        <ion-row>
+          <ion-col col-12 text-center center>
+            <img src="assets/ok.png" style="width: 50px; height: 50px; text-align: center;margin: auto; "/>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 text-center center class="amount">
+            Payment has been Confirmed
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 text-center center>
+            {{date | date:'dd MMM yyyy - hh.mm a'}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 text-center center>
+            <b>{{amount}}</b> to <b>{{sendTo}}</b>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <!--MERCHANT-->
   <ion-card (click)="goToPaymentDetail()">
     <ion-card-header center class="vertical-align-content">
       <ion-grid>
@@ -142,6 +170,115 @@
             <ion-row >
               <ion-col col-12 text-right right class="payment">
               Payment
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <!--CUSTOMER-->
+
+  <ion-card (click)="goToPaymentConfirmation()">
+    <ion-card-header center class="vertical-align-content">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-3>
+            <img src="assets/money.jpg" style="width: 25px; height: 25px;"/>
+          </ion-col>
+          <ion-col col-8>
+            Payment Confirmation
+          </ion-col>
+          <ion-col col-1>
+             <ion-icon md="ios-arrow-forward" ios="ios-arrow-forward"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-2>
+            <p data-letters="AF"></p>
+          </ion-col>
+          <ion-col col-6>
+            <ion-row>
+               Antonio Ferbatang
+            </ion-row>
+            <ion-row class="date">
+              09 August 2017
+            </ion-row>
+          </ion-col>
+          <ion-col col-4>
+            <ion-row >
+              <ion-col col-12 text-right right class="amount">
+              1.000
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col col-12 text-right right class="payment">
+              Pending
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-2>
+            <p data-letters="AF"></p>
+          </ion-col>
+          <ion-col col-6>
+            <ion-row>
+               Antonio Ferbatang
+            </ion-row>
+            <ion-row class="date">
+              09 August 2017
+            </ion-row>
+          </ion-col>
+          <ion-col col-4>
+            <ion-row >
+              <ion-col col-12 text-right right class="amount">
+              1.000
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col col-12 text-right right class="payment">
+              Paid
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-2>
+            <p data-letters="AF"></p>
+          </ion-col>
+          <ion-col col-6>
+            <ion-row>
+               Antonio Ferbatang
+            </ion-row>
+            <ion-row class="date">
+              09 August 2017
+            </ion-row>
+          </ion-col>
+          <ion-col col-4>
+            <ion-row >
+              <ion-col col-12 text-right right class="amount">
+              1.000
+              </ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col col-12 text-right right class="payment">
+              Paid
               </ion-col>
             </ion-row>
           </ion-col>
