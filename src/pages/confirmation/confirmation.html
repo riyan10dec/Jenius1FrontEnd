@@ -9,7 +9,7 @@
 
 
 <ion-content padding>
-  <ion-card>
+  <ion-card *ngFor="let x of listConf">
     <ion-card-header>
       <ion-grid>
         <ion-row>
@@ -18,13 +18,13 @@
           </ion-col>
           <ion-col col-10>
             <ion-row>
-              Antonio Ferbatang
+              <ion-label>{{x.buyer}}</ion-label>           
             </ion-row>
             <ion-row>
               Payment Request from 
             </ion-row>
             <ion-row>
-              Merchant KITUL
+              <ion-label>{{x.seller}}</ion-label>              
             </ion-row>
           </ion-col>
         </ion-row>
