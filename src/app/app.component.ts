@@ -5,8 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { CustomerPaymentPage } from '../pages/customer-payment/customer-payment';
-import { PaymentDetailPage} from '../pages/payment-detail/payment-detail';
+import { PaymentTabsPage} from '../pages/payment-tabs/payment-tabs';
+import { ConfirmationTabsPage } from '../pages/confirmation-tabs/confirmation-tabs';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,7 +25,8 @@ export class MyApp {
     this.pages = [
        { title: 'Dashboard', component: HomePage },
       // { title: 'List', component: ListPage },
-      { title: 'Payment Request', component: PaymentDetailPage }
+      { title: 'Payment Request', component: PaymentTabsPage },
+      { title: 'Payment Confirmation', component: ConfirmationTabsPage }
     ];
 
   }

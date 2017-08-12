@@ -1,5 +1,6 @@
 {
   "name": "Jenius1",
   "app_id": "",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "role": "customer"
 }
