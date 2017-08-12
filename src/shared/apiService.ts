@@ -14,6 +14,8 @@ export class ApiService {
     const headersConfig = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
+      'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS, PUT',
+      'Access-Control-Allow-Origin': '*'
     };
     return new Headers(headersConfig);
   }

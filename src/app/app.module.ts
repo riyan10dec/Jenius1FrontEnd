@@ -20,6 +20,7 @@ import { ConfirmationHistoryDetailPage } from '../pages/confirmation-history-det
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { ApiService } from '../shared/apiService';
 
 //import { FCM } from '@ionic-native/fcm';
 import { NotificationService } from '../providers/notification-service/notification-service';
@@ -60,6 +61,7 @@ import { NotificationService } from '../providers/notification-service/notificat
     NavParams,
     BarcodeScanner,
     NotificationService,
+    ApiService
     //FCM
   ]
 })
