@@ -17,7 +17,7 @@ export class HomePage {
   public date:Date;
   public isMerchant: boolean;
   constructor(public navCtrl: NavController, public navParam :NavParams) {
-
+    
     this.amount = this.navParam.get('amount');
     this.sendTo = this.navParam.get('sendTo');
     this.isMerchant = this.navParam.get('isMerchant');

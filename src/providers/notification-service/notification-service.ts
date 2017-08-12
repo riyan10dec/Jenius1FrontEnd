@@ -12,7 +12,7 @@ import 'rxjs/add/operator/do';
 @Injectable()
 export class NotificationService {
 
-  private url: string = 'http://localhost:58715/api/notification/';
+  private url: string = 'http://192.168.110.174:5000/api/notification/';
   private headers = new Headers({ 'Content-Type': 'application/json' });
 
   constructor(private http: Http) {

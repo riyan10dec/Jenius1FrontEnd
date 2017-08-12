@@ -70,7 +70,7 @@
     </ion-card-content>
   </ion-card>
   <!--MERCHANT-->
-  <ion-card (click)="goToPaymentDetail()">
+  <ion-card (click)="goToPaymentDetail()" *ngIf="isMerchant">
     <ion-card-header center class="vertical-align-content">
       <ion-grid>
         <ion-row>
@@ -179,7 +179,7 @@
   </ion-card>
   <!--CUSTOMER-->
 
-  <ion-card (click)="goToPaymentConfirmation()">
+  <ion-card (click)="goToPaymentConfirmation()" *ngIf="!isMerchant">
     <ion-card-header center class="vertical-align-content">
       <ion-grid>
         <ion-row>

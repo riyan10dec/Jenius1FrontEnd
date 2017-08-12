@@ -8,7 +8,6 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { CustomerPaymentPage } from '../pages/customer-payment/customer-payment';
-import { PaymentDetailPage } from '../pages/payment-detail/payment-detail';
 import { PaymentSummaryPage } from '../pages/payment-summary/payment-summary';
 import { PaymentTabsPage } from '../pages/payment-tabs/payment-tabs';
 import { HistoryDetailPage } from '../pages/history-detail/history-detail';
@@ -32,7 +31,6 @@ import { NotificationService } from '../providers/notification-service/notificat
     HomePage,
     ListPage,
     CustomerPaymentPage,
-    PaymentDetailPage,
     PaymentSummaryPage,
     PaymentTabsPage,
     HistoryDetailPage,
@@ -51,7 +49,6 @@ import { NotificationService } from '../providers/notification-service/notificat
     HomePage,
     ListPage,
     CustomerPaymentPage,
-    PaymentDetailPage,
     PaymentSummaryPage,
     PaymentTabsPage,
     HistoryDetailPage,
@@ -65,7 +62,8 @@ import { NotificationService } from '../providers/notification-service/notificat
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     NavParams,
     BarcodeScanner,
-    NotificationService
+    NotificationService,
+    FCM
   ]
 })
 export class AppModule {}
