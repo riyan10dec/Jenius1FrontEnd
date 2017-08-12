@@ -37,12 +37,7 @@ export class RequestPage {
     console.log("a");
     this.barcodeScanner.scan()
       .then((result) => {
-        alert(
-          "We got a barcode\n" +
-          "Result: " + result.text + "\n" +
-          "Format: " + result.format + "\n" +
-          "Cancelled: " + result.cancelled
-        )
+         this.cashtag =  result.text;
       })
       .catch((error) => {
         alert(error);
