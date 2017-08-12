@@ -13,6 +13,7 @@ export class General {
      trxdate:Date;
      trxamount:number;
      trxstatus:string;   
+     trid2: number;
 }
 
 				

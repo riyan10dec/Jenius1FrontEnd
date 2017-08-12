@@ -7,12 +7,13 @@ import { Injectable } from '@angular/core';
 export class HomeService {
     constructor(private apiService: ApiService) { }
 
-    private paymentConfirmationQuery:string='api/paymentrequest/outstanding/$buyer';
+    private paymentConfirmationQuery:string='api/paymentrequest/outstanding/@0';
     private getHistoryPaymentRequestQuery: string = 'api/paymentrequest/$buyer';
     private getHistoryPaymentConfirmationQuery: string = 'api/paymentrequest/$buyer';
     private getNameQuery: string = 'api/customer/@0';
     private paymentRequestQuery: string = 'api/paymentrequest';
     private paymentRequestHistoryQuery: string = 'api/paymentrequest/history/@0';
+    private payQuery: string = 'api/paymentrequest/pay/@0';
 
     getHistoryPaymentRequest(merchantid: string): Observable<any> {
         return this.apiService.get(this.getHistoryPaymentRequestQuery.replace('@0', merchantid))
@@ -33,8 +34,11 @@ export class HomeService {
     paymentRequest(payload): Observable<any> {
         return this.apiService.post(this.paymentRequestQuery,payload).map(data => data.result);
     }
-    paymentConfirmation(payload): Observable<any> {
-        return this.apiService.post(this.paymentConfirmationQuery,payload)
-        .map(data => data.result);
+    paymentConfirmation(cashtag: string): Observable<any> {
+        return this.apiService.get(this.paymentConfirmationQuery.replace('@0', cashtag))
+            .map((data) => data);
+    }
+     pay(payload): Observable<any> {
+        return this.apiService.post(this.payQuery.replace('@0', payload)).map(data => data);
     }
 }
