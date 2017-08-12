@@ -13,9 +13,7 @@ export class ApiService {
   private setHeaders(): Headers {
     const headersConfig = {
       'Content-Type': 'application/json',
-      'Accept': 'application/json',
-      'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS, PUT',
-      'Access-Control-Allow-Origin': '*'
+      'Accept': 'application/json'
     };
     return new Headers(headersConfig);
   }
@@ -29,7 +27,6 @@ export class ApiService {
     .catch(this.formatErrors)
     .map((res: Response) => res.json());
   }
-
   put(path: string, body: Object = {}): Observable<any> {
     return this.http.put(
       `${ConnectionAPI.apiURL}${path}`,

@@ -27,7 +27,7 @@ export class RequestPage {
   }
 
   goToSummary() {
-    this.navCtrl.push(PaymentSummaryPage);
+    this.navCtrl.push(PaymentSummaryPage, {cashtag: this.cashtag, amount: this.amount});
   }
   OnCashtagChange() {
     //this.cashtag.replace("$", "");
