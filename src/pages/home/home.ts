@@ -17,7 +17,7 @@ export class HomePage {
   public date:Date;
   public isMerchant: boolean;
   constructor(public navCtrl: NavController, public navParam :NavParams) {
-    
+    this.isMerchant = true;
     this.amount = this.navParam.get('amount');
     this.sendTo = this.navParam.get('sendTo');
     this.isMerchant = this.navParam.get('isMerchant');
@@ -28,6 +28,7 @@ export class HomePage {
     console.log(this.navParam.get('amount'));
   }
   ionViewDidLoad(){
+    this.isMerchant = true;
   }
   goToPaymentDetail(){
     this.navCtrl.setRoot(PaymentTabsPage,{},{animate:false});

@@ -6,7 +6,6 @@ import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { CustomerPaymentPage } from '../pages/customer-payment/customer-payment';
 import { PaymentSummaryPage } from '../pages/payment-summary/payment-summary';
 import { PaymentTabsPage } from '../pages/payment-tabs/payment-tabs';
@@ -29,7 +28,6 @@ import { NotificationService } from '../providers/notification-service/notificat
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     CustomerPaymentPage,
     PaymentSummaryPage,
     PaymentTabsPage,
@@ -47,7 +45,6 @@ import { NotificationService } from '../providers/notification-service/notificat
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     CustomerPaymentPage,
     PaymentSummaryPage,
     PaymentTabsPage,
