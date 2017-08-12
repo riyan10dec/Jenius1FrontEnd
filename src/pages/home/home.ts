@@ -1,8 +1,9 @@
+import { DateTime } from 'ionic-angular/umd';
 
 import { IonicPage, NavParams } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {PaymentDetailPage} from '../payment-detail/payment-detail';
+import {PaymentTabsPage} from '../payment-tabs/payment-tabs';
 
 @Component({
   selector: 'page-home',
@@ -12,12 +13,13 @@ export class HomePage {
   public amount: string;
   public sendTo: string;
   public showModal: boolean;
-  public date:string;
+  public date:Date;
   constructor(public navCtrl: NavController, public navParam :NavParams) {
 
     this.amount = this.navParam.get('amount');
     this.sendTo = this.navParam.get('sendTo');
-    if(this.amount !== undefined && this.sendTo !== undefined){
+    this.date = new Date();
+    if (this.amount !== undefined && this.sendTo !== undefined){
       this.showModal = true;
     }
     console.log(this.navParam.get('amount'));
@@ -25,6 +27,9 @@ export class HomePage {
   ionViewDidLoad(){
   }
   goToPaymentDetail(){
-    this.navCtrl.setRoot(PaymentDetailPage,{},{animate:false});
+    this.navCtrl.setRoot(PaymentTabsPage,{},{animate:false});
+  }
+  closeModal(){
+    this.showModal= false;
   }
 }

@@ -9,6 +9,7 @@ import { ListPage } from '../pages/list/list';
 import { CustomerPaymentPage } from '../pages/customer-payment/customer-payment';
 import { PaymentDetailPage } from '../pages/payment-detail/payment-detail';
 import { PaymentSummaryPage } from '../pages/payment-summary/payment-summary';
+import { PaymentTabsPage } from '../pages/payment-tabs/payment-tabs';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -21,11 +22,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     CustomerPaymentPage,
     PaymentDetailPage,
-    PaymentSummaryPage
+    PaymentSummaryPage,
+    PaymentTabsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {tabsPlacement : 'top'}),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,7 +36,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     CustomerPaymentPage,
     PaymentDetailPage,
-    PaymentSummaryPage
+    PaymentSummaryPage,
+    PaymentTabsPage
   ],
   providers: [
     StatusBar,

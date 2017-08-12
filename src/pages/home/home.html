@@ -15,9 +15,10 @@
   </p>
 
   <button ion-button secondary menuToggle>Toggle Menu</button>-->
-  <ion-card *ngIf="showModal">
+  <ion-card *ngIf="showModal" (click)="closeModal()">
     <ion-card-content>
-      <ion-grid>
+      <ion-grid text-right right>
+        <ion-icon name="close"></ion-icon>
         <ion-row>
           <ion-col col-12 text-center center>
           </ion-col>
@@ -29,7 +30,7 @@
         </ion-row>
         <ion-row>
           <ion-col col-12 text-center center>
-            {{date}}
+            {{date | date:'dd MMM yyyy - hh.mm a'}}
           </ion-col>
         </ion-row>
         <ion-row>
