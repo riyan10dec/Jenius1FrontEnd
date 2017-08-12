@@ -10,7 +10,7 @@ import { ConfirmationTabsPage } from '../pages/confirmation-tabs/confirmation-ta
 
 import { NotificationService } from '../providers/notification-service/notification-service';
 
-import { FCM } from '@ionic-native/fcm';
+//import { FCM } from '@ionic-native/fcm';
 
 @Component({
   templateUrl: 'app.html'
@@ -22,7 +22,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public fcm: FCM, private notificationService: NotificationService) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,/* public fcm: FCM,*/ private notificationService: NotificationService) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -42,27 +42,27 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
-      this.fcm.getToken().then(token=>{
-        // TODO : Call service to register token
-        // backend.registerToken(token);
-        console.log('token from fcm : ' + token)
-        this.registerToken({ CashTag: '$buyer', Token: token })
-      })
+      // this.fcm.getToken().then(token=>{
+      //   // TODO : Call service to register token
+      //   // backend.registerToken(token);
+      //   console.log('token from fcm : ' + token)
+      //   this.registerToken({ CashTag: '$buyer', Token: token })
+      // })
       
-      this.fcm.onNotification().subscribe(data=>{
-        if(data.wasTapped){
-          console.log("Received in background");
-        } else {
-          console.log("Received in foreground");
-        };
-      })
+      // this.fcm.onNotification().subscribe(data=>{
+      //   if(data.wasTapped){
+      //     console.log("Received in background");
+      //   } else {
+      //     console.log("Received in foreground");
+      //   };
+      // })
       
-      this.fcm.onTokenRefresh().subscribe(token=>{
-        // TODO : Call service to register token
-        // backend.registerToken(token);
-        console.log('token from fcm : ' + token)
-        this.registerToken({ CashTag: '$buyer', Token: token })
-      })
+      // this.fcm.onTokenRefresh().subscribe(token=>{
+      //   // TODO : Call service to register token
+      //   // backend.registerToken(token);
+      //   console.log('token from fcm : ' + token)
+      //   this.registerToken({ CashTag: '$buyer', Token: token })
+      // })
     });
   }
 

@@ -22,7 +22,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
-import { FCM } from '@ionic-native/fcm';
+//import { FCM } from '@ionic-native/fcm';
 import { NotificationService } from '../providers/notification-service/notification-service';
 
 @NgModule({
@@ -63,7 +63,7 @@ import { NotificationService } from '../providers/notification-service/notificat
     NavParams,
     BarcodeScanner,
     NotificationService,
-    FCM
+    //FCM
   ]
 })
 export class AppModule {}
