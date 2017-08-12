@@ -22,7 +22,6 @@ export class HomePage {
   public listHistoryPaymentConfirmation:any;
   public listHistoryPaymentRequest:any;
   constructor(public navCtrl: NavController, public navParam :NavParams, public homeService: HomeService) {
-    this.isMerchant = true;
     this.amount = this.navParam.get('amount');
     this.sendTo = this.navParam.get('sendTo');
     this.isMerchant = this.navParam.get('isMerchant');
