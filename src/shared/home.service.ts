@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class HomeService {
     constructor(private apiService: ApiService) { }
 
+    private paymentConfirmationQuery:string='api/paymentrequest/outstanding/$buyer';
     private getHistoryPaymentRequestQuery: string = 'api/paymentrequest/$buyer';
     private getHistoryPaymentConfirmationQuery: string = 'api/paymentrequest/$buyer';
     private getNameQuery: string = 'api/customer/@0';
@@ -31,5 +32,9 @@ export class HomeService {
     }
     paymentRequest(payload): Observable<any> {
         return this.apiService.post(this.paymentRequestQuery,payload).map(data => data.result);
+    }
+    paymentConfirmation(payload): Observable<any> {
+        return this.apiService.post(this.paymentConfirmationQuery,payload)
+        .map(data => data.result);
     }
 }
