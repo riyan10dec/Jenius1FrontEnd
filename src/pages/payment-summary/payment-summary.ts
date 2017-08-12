@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,App } from 'ionic-angular';
 import { HomePage } from '../home/home';
 
 /**
@@ -16,14 +16,14 @@ import { HomePage } from '../home/home';
 })
 export class PaymentSummaryPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public app: App) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PaymentSummaryPage');
   }
   submitRequest(){
-    this.navCtrl.setRoot(HomePage, {
+    this.app.getRootNav().setRoot(HomePage, {
       amount : '1.000 IDR',
       sendTo : 'Antonio Ferbatang'
     });
