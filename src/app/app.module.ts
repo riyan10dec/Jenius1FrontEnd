@@ -11,10 +11,12 @@ import { PaymentDetailPage } from '../pages/payment-detail/payment-detail';
 import { PaymentSummaryPage } from '../pages/payment-summary/payment-summary';
 import { PaymentTabsPage } from '../pages/payment-tabs/payment-tabs';
 import { HistoryDetailPage } from '../pages/history-detail/history-detail';
+import { ScanQrPage } from '../pages/scan-qr/scan-qr';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 import { FCM } from '@ionic-native/fcm';
 
@@ -27,7 +29,8 @@ import { FCM } from '@ionic-native/fcm';
     PaymentDetailPage,
     PaymentSummaryPage,
     PaymentTabsPage,
-    HistoryDetailPage
+    HistoryDetailPage,
+    ScanQrPage
   ],
   imports: [
     BrowserModule,
@@ -42,13 +45,15 @@ import { FCM } from '@ionic-native/fcm';
     PaymentDetailPage,
     PaymentSummaryPage,
     PaymentTabsPage,
-    HistoryDetailPage
+    HistoryDetailPage,
+    ScanQrPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    NavParams
+    NavParams,
+    BarcodeScanner
   ]
 })
 export class AppModule {}
