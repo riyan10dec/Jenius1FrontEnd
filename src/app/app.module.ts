@@ -16,6 +16,8 @@ import { HistoryDetailPage } from '../pages/history-detail/history-detail';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { FCM } from '@ionic-native/fcm';
+
 @NgModule({
   declarations: [
     MyApp,

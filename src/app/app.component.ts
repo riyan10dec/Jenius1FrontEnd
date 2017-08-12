@@ -8,6 +8,8 @@ import { ListPage } from '../pages/list/list';
 import { CustomerPaymentPage } from '../pages/customer-payment/customer-payment';
 import { PaymentDetailPage} from '../pages/payment-detail/payment-detail';
 
+import { FCM } from '@ionic-native/fcm';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -18,8 +20,9 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public fcm: FCM) {
     this.initializeApp();
+    this.configureNotification(fcm);
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -36,7 +39,29 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      this.fcm.getToken().then(token=>{
+        // TODO : Call service to register token
+        // backend.registerToken(token);
+      })
+      
+      this.fcm.onNotification().subscribe(data=>{
+        if(data.wasTapped){
+          console.log("Received in background");
+        } else {
+          console.log("Received in foreground");
+        };
+      })
+      
+      this.fcm.onTokenRefresh().subscribe(token=>{
+        // TODO : Call service to register token
+        // backend.registerToken(token);
+      })
     });
+  }
+
+  configureNotification(fcm) {
+    
   }
 
   openPage(page) {

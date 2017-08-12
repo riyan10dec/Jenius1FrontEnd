@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "172189685508",
+    "firebase_url": "https://sweetpotato-b28cf.firebaseio.com",
+    "project_id": "sweetpotato-b28cf",
+    "storage_bucket": "sweetpotato-b28cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172189685508:android:764d2cb7da3280eb",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "172189685508-bo36gbumg5m6ck1p64snrj8ug1o45tdi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfWufb80jeEidwRzGEZpRBdncoC0qdY5o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
